@@ -39,3 +39,4 @@ jobs:
             docker pull $DOCKER_IMAGE
             kubectl delete -f ~/k8s || true
             kubectl apply -f ~/k8s
+          envs: DOCKER_IMAGE
