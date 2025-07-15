@@ -1,0 +1,26 @@
+# version api of Kubernetes Deployment
+apiVersion: apps/v1
+# Deployment for Flask Application on EKS
+kind: Deployment
+# Information about the deployment
+metadata:
+  name: flask-deployment
+
+# identify the deployment configuration
+spec:
+  # Number of Pod, created and maintained by the Deployment
+  replicas: 2
+  # Selector to identify the Pods managed by this Deployment
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+        - name: flask
+          image: <REPLACE_ME_IMAGE>
+          ports:
+            - containerPort: 5000
