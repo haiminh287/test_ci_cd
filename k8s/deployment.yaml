@@ -13,14 +13,14 @@ spec:
   # Selector to identify the Pods managed by this Deployment
   selector:
     matchLabels:
-      app: flask
+      app: flask-app
   template:
     metadata:
       labels:
-        app: flask
+        app: flask-app
     spec:
       containers:
         - name: flask
-          image: <REPLACE_ME_IMAGE>
+          image: haiminh287/flask-app:latest
           ports:
             - containerPort: 5000
