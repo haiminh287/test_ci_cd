@@ -40,6 +40,6 @@ jobs:
           script: |
             sudo docker pull $DOCKER_IMAGE
             kubectl delete -f ~/k8s || true
-            sleep 10
             kubectl apply -f ~/k8s
+            kubectl get svc
           envs: DOCKER_IMAGE
